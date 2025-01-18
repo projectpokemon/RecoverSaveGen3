@@ -12,12 +12,14 @@ public static class Fixer3
     private const int SIZE_SECTOR_USED = 0xF80;
     private const uint Signature = 0x0801_2025;
 
-    public static bool IsSizeWorthLookingAt(long size) => size < (SIZE_G3RAW + 100);
+    private const int FooterLeeway = 0x40; // Allow for RTC footers, usually only 0x10/0x20 but whatever.
+
+    public static bool IsSizeWorthLookingAt(long size) => size <= (SIZE_G3RAW + FooterLeeway);
 
     public static bool TryFixSaveFile(ReadOnlyMemory<byte> file, [NotNullWhen(true)] out byte[]? result, out Fix3Result message)
     {
         result = null;
-        if (file.Length is SIZE_G3RAWHALF)
+        if (file.Length is (>= SIZE_G3RAWHALF and <= SIZE_G3RAWHALF + FooterLeeway))
             return TryInflateFromHalf(file, out result, out message);
 
         // Allow for a little extra size for RTC footers, otherwise reject
@@ -26,7 +28,7 @@ public static class Fixer3
             message = Fix3Result.TooSmall;
             return false;
         }
-        if (file.Length > SIZE_G3RAW + 0x40)
+        if (file.Length > SIZE_G3RAW + FooterLeeway)
         {
             message = Fix3Result.TooBig;
             return false;
@@ -44,7 +46,10 @@ public static class Fixer3
         span.Fill(0xFF);
         file.Span.CopyTo(span);
 
-        return TryInflateFromFull(result, out result, out message);
+        var wasSuccess = TryInflateFromFull(result, out result, out message);
+        if (wasSuccess)
+            message |= Fix3Result.Inflated;
+        return wasSuccess;
     }
 
     private static bool TryInflateFromFull(ReadOnlyMemory<byte> file,

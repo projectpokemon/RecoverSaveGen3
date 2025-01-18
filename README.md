@@ -13,3 +13,5 @@ Requires .NET 8 runtime installed, can be run on any operating system (not Windo
 * If not enough blocks are available, the program will be unable to recover anything.
 * If box data is partially missing (usually what happens), then the program will provide fake blocks, effectively clearing that portion of the box.
 * Once recovered, the program will update all checksums/identifiers to ensure it will be recognized as "valid".
+
+Also works to inflate half-sized save files to their actual size.
