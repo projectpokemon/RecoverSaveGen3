@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35514.174 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecoverSaveGen3.ConsoleApp", "RecoverSaveGen3.ConsoleApp\RecoverSaveGen3.ConsoleApp.csproj", "{6CAC7BA2-8B53-4EE3-A706-40F21F40AD33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecoverSaveGen3.Lib", "RecoverSaveGen3.Lib\RecoverSaveGen3.Lib.csproj", "{724FFD58-489B-4A94-8B87-72A980E889CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6CAC7BA2-8B53-4EE3-A706-40F21F40AD33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CAC7BA2-8B53-4EE3-A706-40F21F40AD33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CAC7BA2-8B53-4EE3-A706-40F21F40AD33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CAC7BA2-8B53-4EE3-A706-40F21F40AD33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{724FFD58-489B-4A94-8B87-72A980E889CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{724FFD58-489B-4A94-8B87-72A980E889CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{724FFD58-489B-4A94-8B87-72A980E889CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{724FFD58-489B-4A94-8B87-72A980E889CA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

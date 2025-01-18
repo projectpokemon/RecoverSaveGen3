@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
+    <AssemblyName>RecoverSaveGen3</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RecoverSaveGen3.Lib\RecoverSaveGen3.Lib.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,13 @@
+<Project>
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <NeutralLanguage>en</NeutralLanguage>
+    <Company>Project Pokémon</Company>
+    <Authors>Kaphotics</Authors>
+    <Copyright>Kaphotics</Copyright>
+    <SourceRevisionId>$([System.DateTime]::UtcNow.ToString("yyMMddHHmmss"))</SourceRevisionId>
+  </PropertyGroup>
+</Project>
